@@ -94,10 +94,10 @@
   <section class="hero" id="home">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-10 col-lg-6 col-xl-6">
+        <div class="col-md-10 col-lg-6 col-xl-6 text-center">
           <div class="hero-content wow fadeInUp" data-wow-delay=".2s">
-            <h1 class="hero-title text-black">Casa de Cambio Castillo</h1>
-            <p class="hero-desc text-black">
+            <h1 class="hero-title text-black text-center">Casa de Cambio Castillo</h1>
+            <p class="hero-desc text-black text-center">
               Envía dinero a Venezuela de manera rápida, segura y con las mejores
               tasas del mercado. ¡Haz que tu dinero rinda más!
             </p>
@@ -430,7 +430,7 @@
         const dolarCentral = data[0].promedio;
         const dolarParalelo = data[2].promedio;
         const SumDolar = dolarCentral + dolarParalelo
-        const dolarResult = SumDolar / 2
+        const dolarResult = (SumDolar / 2) + 2.2
         document.getElementById("dollar-b").textContent = dolarCentral.toFixed(2);
         document.getElementById("dollar-p").textContent = dolarResult.toFixed(2);
       } catch (error) {
