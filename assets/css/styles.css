@@ -142,7 +142,7 @@ p {
   vertical-align: middle;
   font-weight: 500;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 15px 25px;
   border: 1px solid transparent;
   color: var(--white);
@@ -261,7 +261,7 @@ p {
 .navbar-toggler .toggler-icon {
   width: 30px;
   height: 2px;
-  background-color: var(--white);
+  background-color: var(--body-color);
   display: block;
   margin: 5px 0;
   position: relative;
@@ -436,7 +436,7 @@ p {
 
 /* ===== Hero CSS ===== */
 .hero {
-  background: var(--primary-color);
+  background: #f4f4f4;
   padding-top: 180px;
   padding-bottom: 130px;
   position: relative;

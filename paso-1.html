@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa de Cambio Castillo | Brasil, Chile, Venezuela</title>
+
+    <!-- Meta Descriptions -->
+    <meta name="description"
+        content="Casa de Cambio Castillo: Servicios confiables de cambio en Brasil, Chile y Venezuela. Ofrecemos tasas competitivas y atención personalizada." />
+    <meta name="keywords"
+        content="casa de cambio, cambio enrasil, Chile, Venezuela, cambio de dólares, tasas de cambio" />
+    <meta name="author" content="Casa de Cambio Castillo" />
+
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="Casa de Cambio Castillo | Brasil, Chile, Venezuela" />
+    <meta property="og:description"
+        content="Cambio de divisas con las mejores tasas en Brasil, Chile y Venezuela. Servicios rápidos y seguros." />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+    <meta property="og:url" content="https://tu-sitio.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Hreflang para contenido multilingüe -->
+    <link rel="alternate" hreflang="es" href="https://tu-sitio.com/es/" />
+    <link rel="alternate" hreflang="pt-br" href="https://tu-sitio.com/pt-br/" />
+    <link rel="alternate" hreflang="en" href="https://tu-sitio.com/en/" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg" />
+
+    <!-- All CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+
+<body class="bg-gray-100 text-gray-800">
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-wrapper">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler">
+                                <span class="toggler-icon"> </span>
+                                <span class="toggler-icon"> </span>
+                                <span class="toggler-icon"> </span>
+                            </button>
+
+                            <div class="navbar-collapse">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="text-black" href="./index.html">Inicio</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="bg-white rounded shadow p-4 w-md-50">
+            <h2 class="h3 text-center mb-4">Calculadora de Cambio</h2>
+
+            <label for="country" class="form-label">Selecciona el país:</label>
+            <select id="country" class="form-select mb-3">
+                <option value="brasil">Brasil</option>
+                <option value="chile">Chile</option>
+            </select>
+
+            <label for="amount" class="form-label">Monto a enviar:</label>
+            <input type="number" id="amount" class="form-control mb-3" placeholder="Ingresa el monto" />
+
+            <button onclick="calculateBolivares()" class="btn btn-primary w-100">Calcular</button>
+
+            <div id="result" class="mt-3 text-center text-lg text-muted">Resultado en Bs: 0</div>
+        </div>
+    </div>
+
+
+    <footer id="contacto" class="footer wow fadeInUp" data-wow-delay=".15s">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="widget">
+                            <p class="widget-desc">
+                                Somos tu mejor aliado para cambiar y gestionar tus divisas en
+                                Brasil, Chile y Venezuela de manera rápida y segura.
+                            </p>
+                            <!-- <ul class="widget-socials">
+                    <li>
+                      <a href="javascript:void(0)">
+                        <i class="lni lni-facebook-filled"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <i class="lni lni-instagram-filled"></i>
+                      </a>
+                    </li>
+                  </ul> -->
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Sobre Nosotros</h5>
+                            <ul class="widget-links">
+                                <li>
+                                    <a href="javascript:void(0)">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Servicios</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Acerca de</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Opiniones</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Nuestros Servicios</h5>
+                            <ul class="widget-links">
+                                <li>
+                                    <a href="javascript:void(0)">Cambio de Divisas</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Transferencias Internacionales</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Política de Privacidad</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Términos y Condiciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Contáctanos</h5>
+                            <ul class="widget-links">
+                                <li>
+                                    <a href="https://wa.me/554999422079">Brasil: +55 49 9942-2079</a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/56971733481">Chile: +56 9 7173 3481</a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/584249677596">Venezuela: +58 424-9677596</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== Footer End ====== -->
+
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+        <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
+
+    <!-- ====== All Javascript Files ====== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

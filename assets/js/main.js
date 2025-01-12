@@ -98,15 +98,6 @@
   // ===== wow js
   new WOW().init();
 
-  // ========= glightbox
-  const myGallery = GLightbox({
-    href: "https://www.youtube.com/watch?v=r44RKWyfcFw",
-    type: "video",
-    source: "youtube", //vimeo, youtube or local
-    width: 900,
-    autoplayVideos: true,
-  });
-
   // ====== scroll top js
   function scrollTo(element, to = 0, duration = 500) {
     const start = element.scrollTop;
@@ -140,3 +131,79 @@
     scrollTo(document.documentElement);
   };
 })();
+// calculate 
+
+let dollarRates = {
+  venezuela: 0,
+  brasil: 0,
+  chile: 0,
+};
+
+async function getDollarValueVenezuela() {
+  try {
+    const response = await fetch("https://ve.dolarapi.com/v1/dolares");
+    const data = await response.json();
+    const dolarCentral = data[0].promedio;
+    const dolarParalelo = data[2].promedio;
+    dollarRates.venezuela = (dolarCentral + dolarParalelo) / 2;
+  } catch (error) {
+    console.error("Error al obtener los datos de Venezuela:", error);
+  }
+}
+
+async function getDollarValueBrazil() {
+  try {
+    const response = await fetch("https://economia.awesomeapi.com.br/json/last/USD-BRL");
+    const data = await response.json();
+    // Guardar la tasa en BRL directamente
+    dollarRates.brasil = parseFloat(data.USDBRL.ask); // Por ejemplo, 6.0914
+    console.log(`Tasa USD a BRL: ${dollarRates.brasil}`);
+  } catch (error) {
+    console.error("Error al obtener los datos de Brasil:", error);
+  }
+}
+
+
+async function getDollarValueChile() {
+  try {
+    const response = await fetch("https://mindicador.cl/api");
+    const data = await response.json();
+    dollarRates.chile = data.dolar.valor;
+  } catch (error) {
+    console.error("Error al obtener los datos de Chile:", error);
+  }
+}
+
+async function initializeRates() {
+  await getDollarValueVenezuela();
+  await getDollarValueBrazil();
+  await getDollarValueChile();
+}
+
+function calculateBolivares() {
+
+  const country = document.getElementById("country").value; // Brasil o Chile
+  const amount = parseFloat(document.getElementById("amount").value); // Monto en USD
+  const bolivarRate = dollarRates.venezuela; // Tasa de USD a VES
+
+  if (isNaN(amount) || amount <= 0) {
+    alert("Por favor, ingresa un monto válido.");
+    return;
+  }
+
+  if (bolivarRate > 0 && dollarRates[country] > 0) {
+    // Calcular monto en bolívares
+    const bolivares = amount * (bolivarRate / dollarRates[country]);
+    const formattedBolivares = bolivares.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    document.getElementById("result").textContent = `Resultado en Bs: ${formattedBolivares}`;
+  } else {
+    alert("Asegúrate de que los valores de las tasas estén disponibles.");
+  }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", initializeRates);
