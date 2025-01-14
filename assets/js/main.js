@@ -146,7 +146,7 @@ async function getDollarValueVenezuela() {
     const dolarCentral = data[0].promedio;
     const dolarParalelo = data[2].promedio;
     const sumDollar = (dolarCentral + dolarParalelo) / 2
-    dollarRates.venezuela = sumDollar + 2.2;
+    dollarRates.venezuela = sumDollar + 1.7;
   } catch (error) {
     console.error("Error al obtener los datos de Venezuela:", error);
   }
